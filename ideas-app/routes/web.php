@@ -18,4 +18,6 @@ use Illuminate\Support\Facades\Route;
 // when you access '/' route, use 'index' method from 'DashboardController'
 Route::get('/', [DashboardController::class, 'index']);
 
-Route::get('/profile', [ProfileController::class, 'index']);
+Route::get('/terms', function () {
+    return view('terms');
+});
