@@ -13,4 +13,10 @@ class Idea extends Model
         'content',
         'likes'
     ];
+
+    // realtion for comments (one to many)
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
 }
