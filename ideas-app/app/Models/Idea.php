@@ -10,6 +10,7 @@ class Idea extends Model
     use HasFactory;
 
     protected $fillable = [
+        'user_id',
         'content',
         'likes'
     ];
@@ -18,5 +19,11 @@ class Idea extends Model
     public function comments()
     {
         return $this->hasMany(Comment::class);
+    }
+
+    // realtion for user (one to many inverse)
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 }

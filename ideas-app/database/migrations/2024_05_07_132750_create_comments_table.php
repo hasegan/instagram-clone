@@ -16,6 +16,7 @@ return new class extends Migration
             //idea_id
             //constrained = we can not create comments on ideas that don't exist
             //cascadeONDelete = delete the comment when the idea is deleted
+            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->foreignId('idea_id')->constrained()->cascadeOnDelete();
             // content
             $table->string('content');
