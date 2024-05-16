@@ -9,10 +9,12 @@ class Idea extends Model
 {
     use HasFactory;
 
+    //eager load
+    protected $with = ['user:id,name,image', 'comments.user:id,name,image'];
+
     protected $fillable = [
         'user_id',
         'content',
-        'likes'
     ];
 
     // realtion for comments (one to many)
@@ -25,5 +27,11 @@ class Idea extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    // many to many relation
+    public function likes()
+    {
+        return $this->belongsToMany(User::class, 'idea_like')->withTimestamps();
     }
 }
