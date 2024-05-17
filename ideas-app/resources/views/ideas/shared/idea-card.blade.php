@@ -1,8 +1,4 @@
 <div class="card">
-    {{-- {{ dump(Auth::user()->id) }}
-    {{ dump($idea->user->id) }} --}}
-
-
     <div class="px-3 pt-4 pb-2">
         <div class="d-flex align-items-center justify-content-between">
             <div class="d-flex align-items-center">
@@ -28,12 +24,11 @@
                     </button>
                 </a>
                 @auth
-                    @if (Auth::user()->id === $idea->user->id)
+                    @can('idea.edit', $idea)
                         {{-- UPDATE --}}
                         <a href="{{ route('ideas.edit', $idea->id) }}"
                             class="ms-2 link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
-                            <button class="btn btn-secondary btn-sm"
-                                style="background-color: #198754; border-color: #198754;">
+                            <button class="btn btn-secondary btn-sm" style="background-color: #198754; border-color: #198754;">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                     class="bi bi-pencil-fill" viewBox="0 0 16 16">
                                     <path
@@ -54,7 +49,7 @@
                                 </svg>
                             </button>
                         </form>
-                    @endif
+                    @endcan
                 @endauth
             </div>
         </div>
