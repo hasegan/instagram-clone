@@ -29,7 +29,7 @@ class IdeaController extends Controller
 
     public function destroy(Idea $idea)
     {
-        $this->authorize('idea.delete', $idea);
+        $this->authorize('delete', $idea);
         $idea->delete();
 
         return redirect()->route('dashboard')->with('success', 'Idea deleted successfully!');
@@ -37,7 +37,7 @@ class IdeaController extends Controller
 
     public function edit(Idea $idea)
     {
-        $this->authorize('idea.edit', $idea);
+        $this->authorize('update', $idea);
         $editing = true;
 
         return view('ideas.show', compact('idea', 'editing'));
@@ -46,7 +46,7 @@ class IdeaController extends Controller
 
     public function update(Idea $idea)
     {
-        $this->authorize('idea.edit', $idea);
+        $this->authorize('update', $idea);
         $validated = request()->validate([
             'content' => 'required|min:3|max:240',
         ]);

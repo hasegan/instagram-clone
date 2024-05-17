@@ -24,7 +24,7 @@
                     </button>
                 </a>
                 @auth
-                    @can('idea.edit', $idea)
+                    @can('update', $idea)
                         {{-- UPDATE --}}
                         <a href="{{ route('ideas.edit', $idea->id) }}"
                             class="ms-2 link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
