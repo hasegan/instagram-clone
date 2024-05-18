@@ -60,9 +60,9 @@
             <form action="{{ route('ideas.update', $idea->id) }}" method="post">
                 @csrf
                 @method('put')
-                <div class="mb-3">
-                    <textarea name="content" class="form-control" id="content" rows="3">{{ $idea->content }}</textarea>
-                    @error('content')
+                <div class="mb-1">
+                    <textarea name="ideaContent" class="form-control" id="content" rows="3">{{ $idea->content }}</textarea>
+                    @error('ideaContent')
                         {{-- laravel directly inject the error message --}}
                         <span class="d-block fs-6 text-danger mt-2">{{ $message }}</span>
                     @enderror
