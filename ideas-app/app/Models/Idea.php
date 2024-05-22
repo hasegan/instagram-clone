@@ -12,6 +12,8 @@ class Idea extends Model
     //eager load
     protected $with = ['user:id,name,image', 'comments.user:id,name,image'];
 
+    protected $withCount = ['likes'];
+
     protected $fillable = [
         'user_id',
         'content',
