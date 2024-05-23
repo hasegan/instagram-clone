@@ -11,17 +11,17 @@
             </div>
             <div>
                 @can('update', $user)
-                    <a href="{{ route('users.edit', $user->id) }}">Edit</a>
+                    <a href="{{ route('users.edit', $user->id) }}">{{ trans('idea.edit') }}</a>
                 @endcan
             </div>
         </div>
         <div class="px-2 mt-4">
-            <h5 class="fs-5"> Bio : </h5>
+            <h5 class="fs-5"> {{ trans('ideas.bio') }} : </h5>
             <p class="fs-6 fw-light">
                 @if ($user->bio)
                     <p class="fs-6 fw-light">{{ $user->bio }}</p>
                 @else
-                    <p class="fs-6 fw-light">* bio not completed yet *</p>
+                    <p class="fs-6 fw-light">* {{ trans('ideas.without_bio') }} *</p>
                 @endif
 
 
@@ -32,12 +32,14 @@
                             @if (Auth::user()->follows($user))
                                 <form action="{{ route('users.unfollow', $user->id) }}" method="post">
                                     @csrf
-                                    <button type="submit" class="btn btn-primary btn-sm"> Unfollow </button>
+                                    <button type="submit" class="btn btn-primary btn-sm"> {{ trans('ideas.unfollow') }}
+                                    </button>
                                 </form>
                             @else
                                 <form action="{{ route('users.follow', $user->id) }}" method="post">
                                     @csrf
-                                    <button type="submit" class="btn btn-primary btn-sm"> Follow </button>
+                                    <button type="submit" class="btn btn-primary btn-sm"> {{ trans('ideas.follow') }}
+                                    </button>
                                 </form>
                             @endif
                         </div>

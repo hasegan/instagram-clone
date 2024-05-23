@@ -19,7 +19,7 @@
                     @include('ideas.shared.idea-card')
                 </div>
             @empty
-                <p class="text-center my-5">No results found.</p>
+                <p class="text-center my-5">{{ trans('ideas.no_results_found') }}</p>
             @endforelse
 
             <div class="mt-3">

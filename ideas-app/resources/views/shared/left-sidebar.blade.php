@@ -4,21 +4,25 @@
             <li class="nav-item">
                 <a class="{{ Route::is('dashboard') ? 'text-white bg-primary rounded' : '' }} nav-link"
                     href="{{ route('dashboard') }}">
-                    <span>Home</span></a>
+                    <span>{{ trans('ideas.home') }}</span></a>
             </li>
             <li class="nav-item">
                 <a class="{{ Route::is('feed') ? 'text-white bg-primary rounded' : '' }} nav-link"
                     href="{{ route('feed') }}">
-                    <span>Feed</span></a>
+                    <span>{{ trans('ideas.feed') }}</span></a>
             </li>
             <li class="nav-item">
                 <a class="{{ Route::is('terms') ? 'text-white bg-primary rounded' : '' }} nav-link"
                     href="{{ route('terms') }}">
-                    <span>Terms</span></a>
+                    <span>{{ trans('ideas.terms') }}</span></a>
             </li>
         </ul>
     </div>
     <div class="card-footer text-center py-2">
-        <a class="btn btn-link btn-sm" href="{{ route('profile') }}">View Profile </a>
+        <a class=" @if (app()->getLocale(session()->get('locale')) == 'en') text-white bg-primary rounded @endif btn btn-link btn-sm"
+            href="{{ route('lang', 'en') }}">EN</a>
+        <a class="@if (app()->getLocale(session()->get('locale')) == 'ro') text-white bg-primary rounded @endif btn btn-link btn-sm"
+            href="{{ route('lang', 'ro') }}">RO</a>
+
     </div>
 </div>

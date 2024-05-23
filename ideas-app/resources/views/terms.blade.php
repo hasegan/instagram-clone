@@ -8,7 +8,7 @@
             @include('shared.left-sidebar')
         </div>
         <div class="col-6">
-            <h1>Terms</h1>
+            <h1>{{ trans('ideas.terms') }}</h1>
             <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam venenatis, turpis sed tempus tristique,
                 massa arcu varius lacus, ac gravida mauris turpis eget metus. Ut imperdiet risus non lacus blandit, et
                 eleifend quam maximus. Fusce lacinia venenatis urna in vehicula. Vivamus vehicula purus fermentum, porttitor

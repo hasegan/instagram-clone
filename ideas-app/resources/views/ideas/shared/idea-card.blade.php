@@ -68,7 +68,7 @@
                     @enderror
                 </div>
                 <div class="">
-                    <button type="submit" class="btn btn-dark"> Share </button>
+                    <button type="submit" class="btn btn-dark"> {{ trans('ideas.share_idea') }} </button>
                 </div>
             </form>
         @else

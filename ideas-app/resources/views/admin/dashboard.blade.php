@@ -3,5 +3,5 @@
 
 
 @section('content')
-    <h1>Admin Panel</h1>
+    <h1>{{ trans('ideas.admin_panel') }}</h1>
 @endsection

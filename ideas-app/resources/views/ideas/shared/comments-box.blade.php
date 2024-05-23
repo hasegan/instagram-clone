@@ -10,7 +10,7 @@
                 <span class="d-block fs-6 text-danger mb-3">{{ $message }}</span>
             @enderror
             <div>
-                <button type="submit" class="btn btn-primary btn-sm"> Post Comment </button>
+                <button type="submit" class="btn btn-primary btn-sm"> {{ trans('ideas.post_comment') }} </button>
             </div>
         </form>
     @endauth
@@ -31,6 +31,6 @@
             </div>
         </div>
     @empty
-        <p class="text-center my-2">No comments found.</p>
+        <p class="text-center my-2">{{ trans('ideas.no_comments_found') }}</p>
     @endforelse
 </div>

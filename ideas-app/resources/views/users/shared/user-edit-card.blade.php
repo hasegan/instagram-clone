@@ -17,20 +17,20 @@
                 <div>
                     @auth()
                         @if (Auth::id() === $user->id)
-                            <a href="{{ route('users.show', $user->id) }}">View</a>
+                            <a href="{{ route('users.show', $user->id) }}">{{ trans('ideas.view') }}</a>
                         @endif
                     @endauth
                 </div>
             </div>
             <div class="mt-5">
-                <label for="">Profile Picture</label>
+                <label for="">{{ trans('ideas.profile_picture') }}</label>
                 <input type="file" name="image" class="form-control">
                 @error('image')
                     <span class="text-danger fs-6">{{ $message }}</span>
                 @enderror
             </div>
             <div class="px-2 mt-4">
-                <h5 class="fs-5"> Bio : </h5>
+                <h5 class="fs-5"> {{ trans('ideas.bio') }} : </h5>
                 <div class="mb-3">
                     <textarea name="bio" class="form-control" id="bio" rows="3">{{ $user->bio }}</textarea>
                     @error('bio')
@@ -39,7 +39,7 @@
                     @enderror
                 </div>
 
-                <button class="btn btn-dark btn-sm mb-3">Save</button>
+                <button class="btn btn-dark btn-sm mb-3">{{ trans('ideas.save') }}</button>
 
                 @include('users.shared.user-stats')
             </div>
