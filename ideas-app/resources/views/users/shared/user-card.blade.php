@@ -11,7 +11,7 @@
             </div>
             <div>
                 @can('update', $user)
-                    <a href="{{ route('users.edit', $user->id) }}">{{ trans('idea.edit') }}</a>
+                    <a href="{{ route('users.edit', $user->id) }}">{{ trans('ideas.edit') }}</a>
                 @endcan
             </div>
         </div>

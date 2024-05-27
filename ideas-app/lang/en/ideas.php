@@ -9,7 +9,7 @@ return [
     'feed' => 'Feed',
     'terms' => 'Terms',
     'error_message_idea' => 'Idea NOT created successfully.',
-    'who_to_follow' => 'Who to follow',
+    'top_users' => 'Top Users',
     'search' => 'Search',
     'no_results_found' => 'No results found.',
     'edit' => 'Edit',
