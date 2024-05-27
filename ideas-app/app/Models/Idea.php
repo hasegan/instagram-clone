@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Contracts\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -35,5 +36,11 @@ class Idea extends Model
     public function likes()
     {
         return $this->belongsToMany(User::class, 'idea_like')->withTimestamps();
+    }
+
+    public function scopeSearch(Builder $query, $search = '')
+    {
+        // where content like %test%
+        $query->where('content', 'like', '%' . $search . '%');
     }
 }
